@@ -81,10 +81,11 @@ h6 {
   line-height: 125%;
   padding: 0 15px;
   color: #ffefcb;
-  transition: color 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 .header .header__container .header__menu .menu__body .menu__list .menu__link:hover {
   color: white;
+  box-shadow: 0px 3px 3px #fce8b7;
 }
 
 body {
@@ -93,7 +94,7 @@ body {
   min-height: 100%;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: black;
+  color: #555;
 }
 
 .container {
@@ -106,7 +107,7 @@ body {
 
 .main {
   color: #ffefcb;
-  height: 100vh;
+  height: 600px;
   margin-top: -71px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/home.png) no-repeat center center/cover;
 }
@@ -139,13 +140,13 @@ body {
 }
 
 .services {
-  padding-top: 50px;
+  padding: 50px 0px;
 }
 .services .container .services__top {
   text-align: center;
   margin-bottom: 100px;
 }
-.services .container .services__top .services-title {
+.services .container .services__top h2 {
   text-transform: uppercase;
   padding-bottom: 25px;
 }
@@ -167,7 +168,6 @@ body {
   max-width: 320px;
   min-width: 240px;
   padding: 10px 20px;
-  color: #555;
 }
 .services .container .services__offer .offer-card .offer-card__fas {
   width: 90px;
@@ -178,16 +178,18 @@ body {
   padding: 20px 0px;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: all 0.5s ease-in;
 }
 .services .container .services__offer .offer-card .offer-card__fas i {
   color: #ab5425;
   font-size: 45px;
   font-weight: 900;
+  transition: all 0.5s ease-in;
 }
-.services .container .services__offer .offer-card .fas-wrapper:hover {
+.services .container .services__offer .offer-card .offer-card__fas:hover {
   background-color: #ab5425;
 }
-.services .container .services__offer .offer-card .fas-wrapper:hover i {
+.services .container .services__offer .offer-card .offer-card__fas:hover i {
   color: #fff6f4;
 }
 .services .container .services__offer .offer-card .offer-card__title {
@@ -202,4 +204,154 @@ body {
   line-height: 145%;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.about_us .container .about_us__top {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.about_us .container .about_us__top h2 {
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+.about_us .container .about_us__top hr {
+  width: 50px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #555;
+  margin-bottom: 25px;
+}
+.about_us .container .about_us__text {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 25px;
+}
+.about_us .container .about_us__text p {
+  font-family: "Roboto Slab", sans-serif;
+  width: 49%;
+  font-size: 14px;
+  line-height: 24px;
+}
+.about_us .container .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.about_us .container .swiper-container .swiper-slide {
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about_us .container .swiper-container .swiper-slide img {
+  max-width: 260px;
+  margin-bottom: 15px;
+}
+.about_us .container .swiper-container .swiper-slide .swiper-slide__content {
+  font-size: 12px;
+  text-align: center;
+}
+.about_us .container .swiper-container .swiper-slide .swiper-slide__content h3 {
+  margin-bottom: 15px;
+}
+.about_us .container .swiper-container .swiper-slide .swiper-slide__content p {
+  margin-bottom: 20px;
+}
+.about_us .container .swiper-container .swiper_btn {
+  opacity: 0.5;
+  width: 35px;
+  height: 38px;
+  background-color: rgba(85, 85, 85, 0.5);
+}
+.about_us .container .swiper-container .swiper-button-next {
+  position: absolute;
+  top: 38%;
+}
+.about_us .container .swiper-container .swiper-button-next::after {
+  content: "";
+  position: absolute;
+  top: 33%;
+  left: 25%;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(135deg);
+  color: #fff;
+}
+.about_us .container .swiper-container .swiper-button-prev {
+  position: absolute;
+  top: 38%;
+}
+.about_us .container .swiper-container .swiper-button-prev::after {
+  content: "";
+  position: absolute;
+  top: 33%;
+  right: 25%;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(-45deg);
+  color: #fff;
+}
+
+.latest_works .container .latest_works__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.latest_works .container .latest_works__top h2 {
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+.latest_works .container .latest_works__top hr {
+  width: 50px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #555;
+  margin-bottom: 25px;
+}
+.latest_works .container .latest_works__top .latest_works__list {
+  height: 60px;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.latest_works .container .latest_works__top .latest_works__list .list_item {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 16px;
+  line-height: 136%;
+  color: #555;
+  cursor: pointer;
+  padding: 0 15px;
+}
+.latest_works .container .jobs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.latest_works .container .jobs .jobs_card {
+  padding: 15px 20px;
+}
+.latest_works .container .jobs .jobs_card img {
+  max-width: 360px;
+  max-height: 320px;
+  overflow: hidden;
+}
+.latest_works .container .jobs .jobs_card .jobs_hover {
+  text-align: center;
+  display: none;
+}
+.latest_works .container .jobs .jobs_card:hover {
+  opacity: 0.7;
+}
+.latest_works .container .jobs .jobs_card:hover .jobs_hover {
+  display: block;
+  position: absolute;
 }
