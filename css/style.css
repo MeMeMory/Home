@@ -236,6 +236,7 @@ body {
 .about_us .container .swiper-container {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .about_us .container .swiper-container .swiper-slide {
   font-size: 18px;
@@ -298,6 +299,9 @@ body {
   color: #fff;
 }
 
+.latest_works {
+  margin: calc(18px + (71 - 18) * ((100vw - 320px)/ (1600 - 320))) auto;
+}
 .latest_works .container .latest_works__top {
   display: flex;
   flex-direction: column;
@@ -335,23 +339,202 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin: -1em;
 }
 .latest_works .container .jobs .jobs_card {
-  padding: 15px 20px;
+  position: relative;
+  padding: 1em;
+  flex: 0 0 33.3%;
 }
 .latest_works .container .jobs .jobs_card img {
-  max-width: 360px;
-  max-height: 320px;
+  width: 100%;
   overflow: hidden;
 }
 .latest_works .container .jobs .jobs_card .jobs_hover {
-  text-align: center;
   display: none;
 }
-.latest_works .container .jobs .jobs_card:hover {
-  opacity: 0.7;
+.latest_works .container .jobs .jobs_card .jobs_hover h5 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.latest_works .container .jobs .jobs_card .jobs_hover p {
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.latest_works .container .jobs .jobs_card .jobs_hover .button {
+  width: 94px;
+  letter-spacing: 1px;
+  color: #c0301c;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 36px;
+  font-weight: 400;
 }
 .latest_works .container .jobs .jobs_card:hover .jobs_hover {
   display: block;
   position: absolute;
+  left: 1em;
+  bottom: 1em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: calc(100% - 2em);
+  height: calc(100% - 2em);
+  background-color: rgba(192, 48, 28, 0.7);
+}
+
+.your_project {
+  color: white;
+  margin-top: calc(39px + (99 - 39) * ((100vw - 320px)/ (1600 - 320)));
+  background: linear-gradient(rgba(192, 48, 28, 0.6), rgba(192, 48, 28, 0.6)), fixed url(../img/get_in_touch.png) no-repeat center center/cover;
+}
+.your_project .container .content {
+  padding: calc(40px + (100 - 40) * ((100vw - 320px)/ (1600 - 320)));
+  text-align: center;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: calc(18px + (30 - 18) * ((100vw - 320px)/ (1600 - 320)));
+  line-height: 136%;
+}
+.your_project .container .content p:last-of-type {
+  padding-bottom: calc(20px + (71 - 20) * ((100vw - 320px)/ (1600 - 320)));
+}
+.your_project .container .content .main-buttom {
+  cursor: pointer;
+  padding: 15px 30px;
+  border: 2px solid white;
+  background: none;
+  transition: all 0.4s ease;
+}
+.your_project .container .content .main-buttom a {
+  color: #ffefcb;
+}
+.your_project .container .content .main-buttom:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #fce8b7;
+}
+
+.blog .container .blog__top {
+  text-align: center;
+  margin: calc(18px + (71 - 18) * ((100vw - 320px)/ (1600 - 320))) auto;
+  line-height: calc(20px + (24 - 20) * ((100vw - 320px)/ (1600 - 320)));
+}
+.blog .container .blog__top h2 {
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+.blog .container .blog__top hr {
+  width: 50px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #555;
+  margin-bottom: 25px;
+}
+.blog .container .blog__post {
+  font-family: "Roboto Slab", sans-serif;
+}
+.blog .container .blog__post figure img {
+  max-width: 490px;
+  padding-right: calc(8px + (33 - 8) * ((100vw - 320px)/ (1600 - 320)));
+  object-fit: contain;
+  float: left;
+}
+.blog .container .blog__post figure figcaption .date {
+  display: flex;
+  float: left;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: calc(60px + (76 - 60) * ((100vw - 320px)/ (1600 - 320)));
+  height: calc(60px + (76 - 60) * ((100vw - 320px)/ (1600 - 320)));
+  margin: 0 calc(13px + (26 - 13) * ((100vw - 320px)/ (1600 - 320))) calc(8px + (23 - 8) * ((100vw - 320px)/ (1600 - 320))) 0;
+  border: 2px solid #555;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: calc(18px + (24 - 18) * ((100vw - 320px)/ (1600 - 320)));
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+}
+.blog .container .blog__post figure figcaption .post__title {
+  display: block;
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 400;
+  color: #555;
+}
+.blog .container .blog__post figure figcaption .post__autor {
+  color: #777;
+  display: block;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.blog .container .blog__post figure figcaption .post__autor a {
+  color: #777;
+  cursor: pointer;
+}
+.blog .container .blog__post figure figcaption .post__autor a:hover {
+  color: #0013e1;
+}
+.blog .container .blog__post figure figcaption .post__text {
+  font-size: calc(12px + (14 - 12) * ((100vw - 320px)/ (1600 - 320)));
+  line-height: calc(18px + (24 - 18) * ((100vw - 320px)/ (1600 - 320)));
+  color: #555;
+}
+.blog .container .blog__post figure figcaption .invisible {
+  display: inline-block;
+  font-size: calc(10px + (13 - 10) * ((100vw - 320px)/ (1600 - 320)));
+  font-weight: 700;
+  letter-spacing: 1px;
+  outline: 0;
+  color: #c0301c;
+  cursor: pointer;
+}
+.blog .container .blog__post figure figcaption::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.blog .container .blog__post hr {
+  height: 1px;
+  margin: 30px 0;
+  background-color: #ddd;
+}
+
+.clients .company_wrapper {
+  padding: 0px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.clients .company_wrapper .clients__company {
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+.clients .company_wrapper .clients__company:hover {
+  transform: scale(1.1);
+}
+.clients .swiper-container-clients {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.clients .swiper-container-clients .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  font-family: "Roboto Slab", sans-serif;
+  font-style: italic;
+}
+.clients .swiper-container-clients .swiper-slide p {
+  padding: 40px;
+}
+.clients .swiper-container-clients .swiper-slide span {
+  padding: 30px 0px 60px 0px;
+  display: block;
 }
