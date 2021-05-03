@@ -82,19 +82,93 @@ if (menuLinks.length > 0) {
 	}
 }
 
-$('img.img-svg').each(function () {
-	var $img = $(this);
-	var imgClass = $img.attr('class');
-	var imgURL = $img.attr('src');
-	$.get(imgURL, function (data) {
-		var $svg = $(data).find('svg');
-		if (typeof imgClass !== 'undefined') {
-			$svg = $svg.attr('class', imgClass + ' replaced-svg');
+
+// *** GET`N`SET FORM DATA *** //
+let form = document.querySelector("#jsContactForm"),
+	fieldName = document.querySelector("#formName"),
+	fieldEmail = document.querySelector("#formEmail"),
+	fieldPhone = document.querySelector("#formPhone"),
+	fieldCompany = document.querySelector("#formCompany")
+
+form.addEventListener('submit', function (event) {
+	event.preventDefault()
+	const userData = {
+		name: fieldName.value,
+		email: fieldEmail.value,
+		phone: fieldPhone.value,
+		company: fieldCompany.value
+	}
+	localStorage.setItem('user', JSON.stringify(userData))
+})
+
+let lastUserData = JSON.parse(localStorage.getItem('user'))
+if (lastUserData) {
+	fieldName.value = lastUserData.name
+	fieldEmail.value = lastUserData.email
+	fieldPhone.value = lastUserData.phone
+	fieldCompany.value = lastUserData.company
+}
+
+// *** VALIDATION OF FORM USER PHONE NUMBER *** //
+let phonePattern = (/^[+]?[\s|0-9]*[(]?[0-9]{1,4}[)]?[-\s|0-9]*$/),
+	wrongNumber = document.createElement("p")
+wrongNumber.className = "errorForm"
+fieldPhone.addEventListener('blur', phoneValidate)
+fieldPhone.addEventListener('focus', (event) => {
+	if (document.querySelector(".errorForm")) {
+		form.removeChild(wrongNumber)
+		fieldPhone.style.borderColor = "#555"
+	}
+})
+
+function phoneValidate(event) {
+	let phoneNumb = fieldPhone.value
+	if (!phonePattern.test(phoneNumb)) {
+		fieldPhone.style.borderColor = "#A41D00"
+		form.appendChild(wrongNumber)
+		form.style.position = "relative"
+		wrongNumber.style.position = "absolute"
+		wrongNumber.style.width = "200px"
+		wrongNumber.style.height = "14px"
+		wrongNumber.style.top = "37%"
+		wrongNumber.style.left = "0%"
+		wrongNumber.style.justifyContent = "center"
+		wrongNumber.style.alignItems = "center"
+		wrongNumber.style.color = "#A41D00"
+		wrongNumber.style.fontSize = "12px"
+		wrongNumber.innerHTML = "Invalid number format"
+		return false
+	}
+}
+
+// *** JOB`S POP *** //
+let jobsPic = document.querySelectorAll(".jobs_card"),
+	categories = document.querySelectorAll(".list_item")
+
+categories.forEach((category) => {
+	category.addEventListener('click', jobsPop)
+})
+
+function jobsPop(event) {
+	jobsPic.forEach((elem) => {
+		let selected = document.querySelector(".selected")
+		if (selected) selected.classList.remove("selected")
+		event.target.classList.add("selected")
+		elem.classList.remove("invisible")
+		if (!elem.dataset.category.match(event.target.dataset.trend) && event.target.dataset.trend !== 'All') {
+			elem.classList.add("invisible")
+			localStorage.setItem('last category', event.target.dataset.trend)
 		}
-		$svg = $svg.removeAttr('xmlns:a');
-		if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-			$svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-		}
-		$img.replaceWith($svg);
-	}, 'xml');
-});
+	})
+}
+
+// *** HIDE DETAILS SUMMARY, WHEN IT OPEN *** //
+let blogSummaries = document.querySelectorAll("summary")
+
+blogSummaries.forEach((summary) => {
+	summary.addEventListener('click', hideSummaries)
+})
+
+function hideSummaries(event) {
+	event.target.classList.toggle("invisible")
+}

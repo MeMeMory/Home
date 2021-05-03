@@ -43,16 +43,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-weight: 400;
 }
 
 .header {
   position: sticky;
   width: 100%;
-  height: 71px;
+  height: calc(60px + (71 - 60) * ((100vw - 769px) / (1440 - 769)));
   z-index: 10;
-  background: none;
 }
 .header .header__container {
   position: relative;
@@ -107,7 +106,7 @@ body {
 
 .main {
   color: #ffefcb;
-  height: 600px;
+  height: 100vh;
   margin-top: -71px;
   background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/home.png) no-repeat center center/cover;
 }
@@ -250,6 +249,9 @@ body {
   max-width: 260px;
   margin-bottom: 15px;
 }
+.about_us .container .swiper-container .swiper-slide img:hover {
+  filter: grayscale(1);
+}
 .about_us .container .swiper-container .swiper-slide .swiper-slide__content {
   font-size: 12px;
   text-align: center;
@@ -334,17 +336,24 @@ body {
   cursor: pointer;
   padding: 0 15px;
 }
+.latest_works .container .latest_works__top .latest_works__list .selected {
+  color: #c0301c;
+}
 .latest_works .container .jobs {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
   margin: -1em;
+  transition: all 0.9s ease;
+}
+.latest_works .container .jobs .invisible {
+  display: none;
 }
 .latest_works .container .jobs .jobs_card {
   position: relative;
   padding: 1em;
   flex: 0 0 33.3%;
+  transition: all 0.9s ease;
 }
 .latest_works .container .jobs .jobs_card img {
   width: 100%;
@@ -352,26 +361,6 @@ body {
 }
 .latest_works .container .jobs .jobs_card .jobs_hover {
   display: none;
-}
-.latest_works .container .jobs .jobs_card .jobs_hover h5 {
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-.latest_works .container .jobs .jobs_card .jobs_hover p {
-  margin-bottom: 10px;
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-}
-.latest_works .container .jobs .jobs_card .jobs_hover .button {
-  width: 94px;
-  letter-spacing: 1px;
-  color: #c0301c;
-  background-color: #fff;
-  font-size: 14px;
-  line-height: 36px;
-  font-weight: 400;
 }
 .latest_works .container .jobs .jobs_card:hover .jobs_hover {
   display: block;
@@ -387,6 +376,26 @@ body {
   width: calc(100% - 2em);
   height: calc(100% - 2em);
   background-color: rgba(192, 48, 28, 0.7);
+}
+.latest_works .container .jobs .jobs_card:hover h5 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.latest_works .container .jobs .jobs_card:hover p {
+  margin-bottom: 10px;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+.latest_works .container .jobs .jobs_card:hover .button {
+  width: 94px;
+  letter-spacing: 1px;
+  color: #c0301c;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 36px;
+  font-weight: 400;
 }
 
 .your_project {
@@ -481,6 +490,9 @@ body {
 .blog .container .blog__post figure figcaption .post__autor a:hover {
   color: #0013e1;
 }
+.blog .container .blog__post figure figcaption summary {
+  display: none;
+}
 .blog .container .blog__post figure figcaption .post__text {
   font-size: calc(12px + (14 - 12) * ((100vw - 320px)/ (1600 - 320)));
   line-height: calc(18px + (24 - 18) * ((100vw - 320px)/ (1600 - 320)));
@@ -506,8 +518,11 @@ body {
   background-color: #ddd;
 }
 
+.clients {
+  padding-bottom: 60px;
+}
 .clients .company_wrapper {
-  padding: 0px 15px;
+  padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -519,22 +534,197 @@ body {
 .clients .company_wrapper .clients__company:hover {
   transform: scale(1.1);
 }
-.clients .swiper-container-clients {
+.clients .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #7b7b7b;
+}
+.clients .swiper-pagination-bullet-active {
+  background-color: #c0301c;
+}
+.clients .swiper-container__clients {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.clients .swiper-container-clients .swiper-slide {
+.clients .swiper-container__clients .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
   font-family: "Roboto Slab", sans-serif;
   font-style: italic;
 }
-.clients .swiper-container-clients .swiper-slide p {
-  padding: 40px;
+.clients .swiper-container__clients .swiper-slide p {
+  padding: 50px 20px 20px 20px;
 }
-.clients .swiper-container-clients .swiper-slide span {
+.clients .swiper-container__clients .swiper-slide span {
   padding: 30px 0px 60px 0px;
   display: block;
+}
+
+.contacts {
+  margin-bottom: 100px;
+}
+.contacts .contacts__top {
+  text-align: center;
+  margin: calc(18px + (71 - 18) * ((100vw - 320px)/ (1600 - 320))) auto;
+  line-height: calc(20px + (24 - 20) * ((100vw - 320px)/ (1600 - 320)));
+}
+.contacts .contacts__top h2 {
+  text-transform: uppercase;
+  padding-bottom: 25px;
+}
+.contacts .contacts__top hr {
+  width: 50px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: #555;
+  margin-bottom: 25px;
+}
+.contacts .contacts__bottom {
+  display: flex;
+  flex: 2 2 10%;
+}
+.contacts .contacts__bottom .contacts__aside {
+  margin-right: 80px;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form {
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 175%;
+  color: #555;
+  font-family: "Roboto Slab", sans-serif;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form .aside_form-top {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 30px;
+  color: #555;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form .aside_form-top i {
+  width: 10px;
+  margin-right: 20px;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form .aside_form-top h3 {
+  font-size: 14px;
+  line-height: 220%;
+  font-weight: 600;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form p {
+  margin-left: 30px;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form p a {
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.contacts .contacts__bottom .contacts__aside .aside_form p a:hover {
+  color: #cbbc72;
+}
+.contacts .contacts__bottom .contact_form {
+  max-width: 850px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contacts .contacts__bottom .contact_form input {
+  padding: 9px;
+  font-size: 12px;
+  font-family: "Roboto Slab", sans-serif;
+  color: #555;
+  width: 48%;
+  height: 40px;
+  border: 1px solid #555;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+}
+.contacts .contacts__bottom .contact_form textarea {
+  font-family: "Roboto Slab", sans-serif;
+  width: 100%;
+  padding: 9px;
+  min-height: 100px;
+  border: 1px solid #555;
+  letter-spacing: 0.1px;
+  margin-bottom: 1.5em;
+}
+.contacts .contacts__bottom .contact_form input:focus {
+  border-radius: 8px;
+}
+.contacts .contacts__bottom .contact_form input:focus,
+.contacts .contacts__bottom .contact_form textarea:focus {
+  outline: none;
+  border: 1px solid #000000;
+}
+.contacts .contacts__bottom .contact_form div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.contacts .contacts__bottom .contact_form div .button {
+  font-family: "Roboto Slab", sans-serif;
+  color: #555;
+  border-radius: 0px;
+  padding: 10px 40px;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  text-align: center;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contacts .contacts__bottom .contact_form div .button:hover {
+  box-shadow: 0px 0px 10px #686868;
+}
+.contacts .contacts__bottom .contact_form div p {
+  width: 150%;
+  font-size: 12px;
+}
+.contacts .contacts__bottom .contact_form div p span {
+  color: #c0301c;
+}
+
+.footer {
+  background-color: #c0301c;
+  padding: calc(24px + (100 - 24) * ((100vw - 320px)/ (1600 - 320))) 0;
+  text-align: center;
+}
+.footer .footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer-social .socisl-item {
+  text-align: center;
+  margin: 0 8px;
+  width: 35px;
+  height: 35px;
+  border-radius: 18px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.footer .footer-social .socisl-item a i {
+  line-height: 30px;
+  color: #ffffff;
+}
+.footer .footer-social .socisl-item:hover {
+  border: 2px solid #ffe684;
+}
+.footer .footer-social .socisl-item:hover a i {
+  color: #ffe684;
+}
+.footer hr {
+  margin: 20px auto;
+  width: 50px;
+  height: 2px;
+  background-color: white;
+}
+.footer p {
+  color: white;
+  letter-spacing: 0.5px;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: calc(10px + (12 - 10) * ((100vw - 320px)/ (1600 - 320)));
 }
