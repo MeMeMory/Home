@@ -83,7 +83,7 @@ if (menuLinks.length > 0) {
 }
 
 
-// *** GET`N`SET FORM DATA *** //
+// GET`N`SET FORM DATA
 let form = document.querySelector("#jsContactForm"),
 	fieldName = document.querySelector("#formName"),
 	fieldEmail = document.querySelector("#formEmail"),
@@ -109,7 +109,8 @@ if (lastUserData) {
 	fieldCompany.value = lastUserData.company
 }
 
-// *** VALIDATION OF FORM USER PHONE NUMBER *** //
+
+// VALIDATION OF FORM USER PHONE NUMBER
 let phonePattern = (/^[+]?[\s|0-9]*[(]?[0-9]{1,4}[)]?[-\s|0-9]*$/),
 	wrongNumber = document.createElement("p")
 wrongNumber.className = "errorForm"
@@ -141,7 +142,8 @@ function phoneValidate(event) {
 	}
 }
 
-// *** JOB`S POP *** //
+
+// JOB`S POP
 let jobsPic = document.querySelectorAll(".jobs_card"),
 	categories = document.querySelectorAll(".list_item")
 
@@ -162,7 +164,8 @@ function jobsPop(event) {
 	})
 }
 
-// *** HIDE DETAILS SUMMARY, WHEN IT OPEN *** //
+
+// HIDE DETAILS SUMMARY, WHEN IT OPEN
 let blogSummaries = document.querySelectorAll("summary")
 
 blogSummaries.forEach((summary) => {
@@ -172,3 +175,40 @@ blogSummaries.forEach((summary) => {
 function hideSummaries(event) {
 	event.target.classList.toggle("invisible")
 }
+
+
+// SCROLL TO TOP FOR NORMAL BROWSERS
+let arrowTop = document.createElement("span")
+
+arrowTop.id = 'scrollTop'
+window.onscroll = function () {
+	if (window.pageYOffset > window.innerHeight) {
+		arrowTop.style.opacity = "1"
+	} else {
+		arrowTop.style.opacity = "0"
+	}
+}
+arrowTop.onclick = function () {
+	if (navigator.userAgent.indexOf("Trident") > -1) {
+		ieTop()
+	} else {
+		window.scrollTo(0, 0)
+	}	
+}
+
+// SCROLL TO TOP FOR LOVELY IE
+function ieTop() {
+	let top = window.pageYOffset
+	window.scrollTo(0, top - 50)
+	setTimeout(function () {
+		if (top <= 0) {
+			window.scrollTo(0, 0)
+		} else {
+			ieTop()
+		}
+	}, 10)
+}
+
+document.body.appendChild(arrowTop)
+
+
