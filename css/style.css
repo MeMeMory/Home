@@ -297,7 +297,7 @@ body {
 
 @media (max-width: 767px) {
   .main .container .main-title {
-    margin-top: calc(170px + (250 - 170) * ((100vw - 465px) / (769 - 465)));
+    margin-top: calc(200px + (250 - 200) * ((100vw - 465px) / (769 - 465)));
     font-size: calc(30px + (50 - 30) * ((100vw - 465px) / (769 - 465)));
   }
   .main .container .main-template {
