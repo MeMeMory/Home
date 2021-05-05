@@ -265,7 +265,7 @@ body {
   color: #ffefcb;
   height: 100vh;
   margin-top: -71px;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/home.png) no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(../img/webp/home.webp) no-repeat center center/cover;
 }
 .main .container {
   display: flex;
@@ -593,7 +593,7 @@ body {
 .your_project {
   color: white;
   margin-top: calc(39px + (99 - 39) * ((100vw - 320px)/ (1600 - 320)));
-  background: linear-gradient(rgba(192, 48, 28, 0.6), rgba(192, 48, 28, 0.6)), fixed url(../img/get_in_touch.png) no-repeat center center/cover;
+  background: linear-gradient(rgba(192, 48, 28, 0.6), rgba(192, 48, 28, 0.6)), fixed url(../img/webp/get_in_touch.webp) no-repeat center center/cover;
 }
 .your_project .container .content {
   padding: 40px calc(20px + (100 - 20) * ((100vw - 320px)/ (1600 - 320)));
