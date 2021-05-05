@@ -285,14 +285,13 @@ body {
   padding: 15px 30px;
   border: 2px solid white;
   background: none;
-  transition: all 0.5s ease;
-}
-.main .container .main-buttom a {
+  transition: all 0.4s ease;
   color: #ffefcb;
 }
 .main .container .main-buttom:hover {
   transform: scale(1.2);
   box-shadow: 0 0 10px #fce8b7;
+  color: white;
 }
 
 @media (max-width: 767px) {
@@ -980,6 +979,110 @@ body {
 #scrollTop::before {
   transform: rotate(45deg);
   left: 40.5%;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.popup {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.8s ease 0s;
+}
+.popup .popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  transition: all 0.8s ease 0s;
+}
+.popup .popup__body .popup__content {
+  background-color: #fff;
+  color: #000;
+  max-width: 800px;
+  padding: 30px;
+  position: relative;
+  transition: all 0.8s ease 0s;
+  opacity: 0;
+  transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
+}
+.popup .popup__body .popup__content .popup__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 17px;
+  color: #000;
+  text-decoration: none;
+}
+.popup .popup__body .popup__content .popup__contact-form {
+  font-family: "Roboto Slab", sans-serif;
+  color: #555;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+}
+.popup .popup__body .popup__content .popup__contact-form input {
+  width: 85%;
+  font-size: 12px;
+  line-height: 200%;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+}
+.popup .popup__body .popup__content .popup__contact-form .submit {
+  color: #555;
+  max-width: 80%;
+  font-size: 12px;
+  padding: 10px 30px;
+  border: 1px solid black;
+  background-color: #efefef;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.popup .popup__body .popup__content .popup__contact-form .submit:hover {
+  box-shadow: 0 0 1px #c0301c;
+  border-color: #fff;
+  color: #fff;
+  background-color: #c0301c;
+}
+.popup .popup__body .popup__content .popup__contact-form p {
+  font-size: 12px;
+}
+.popup .popup__body .popup__content .popup__contact-form p span {
+  color: #c0301c;
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup.open .popup__content {
+  transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
+  opacity: 1;
+}
+
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .footer {
