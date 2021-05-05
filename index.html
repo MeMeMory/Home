@@ -41,7 +41,7 @@
 			<div class="container">
 				<h1 class="main-title page__section_1">WELCOME TO STARTUP</h1>
 				<h3 class="main-template">Your Favourite Creative Agency Template</h3>
-				<button class="main-buttom" href="#"><a href="">GET STARTED</a></button>
+				<a class="main-buttom popup-link" href="#popup">GET STARTED</a>
 			</div>
 		</section>
 		<section class="services">
@@ -395,7 +395,19 @@
 			</div>
 		</section>
 
-<footer class="footer">
+<div id="popup" class="popup">
+	<div class="popup__body">
+		<div class="popup__content">
+			<a href="" class="popup__close close-popup">╳</a>
+			<form class="popup__contact-form">
+				<input id="jsNamePopup" type="text" placeholder="YOUR NAME" required="required">
+				<input id="jsPhonePopup" type="password" placeholder="PASSWORD" required="required">
+				<button class="submit">SIGN IN</button>
+				<p><span>*</span> You should pass a small check before signing in.</p>
+			</form>
+		</div>
+	</div>
+</div><footer class="footer">
 	<div class="container">
 		<ul class="footer-social">
 			<li class="socisl-item"><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
@@ -412,6 +424,7 @@
 	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/slider.js"></script>
+	<script src="js/popups.js"></script>
 </body>
 
 </html>
