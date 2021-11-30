@@ -16,32 +16,36 @@
 
 <body>
 	<div class="wrapper">
-<header class="header">
-	<div class="header__container">
-		<a class="header__logo" href="index.html">Startup</a>
-		<div class="header__menu menu">
-			<div class="menu__icon">
-				<span></span>
+
+		<header class="header">
+			<div class="header__container">
+				<a class="header__logo" href="index.html">Startup</a>
+				<div class="header__menu menu">
+					<div class="menu__icon">
+						<span></span>
+					</div>
+					<nav class="menu__body">
+						<ul class="menu__list" id="menu">
+							<li><a data-goto=".page__section_1" class="menu__link" href="#">Home</a></li>
+							<li><a data-goto=".page__section_2" class="menu__link" href="#">Services</a></li>
+							<li><a data-goto=".page__section_3" class="menu__link" href="#">About</a></li>
+							<li><a data-goto=".page__section_4" class="menu__link" href="#">Works</a></li>
+							<li><a data-goto=".page__section_5" class="menu__link" href="#">Blog</a></li>
+							<li><a data-goto=".page__section_6" class="menu__link" href="#">Clients</a></li>
+							<li><a data-goto=".page__section_7" class="menu__link" href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
-			<nav class="menu__body">
-				<ul class="menu__list" id="menu">
-					<li><a data-goto=".page__section_1" class="menu__link" href="#">Home</a></li>
-					<li><a data-goto=".page__section_2" class="menu__link" href="#">Services</a></li>
-					<li><a data-goto=".page__section_3" class="menu__link" href="#">About</a></li>
-					<li><a data-goto=".page__section_4" class="menu__link" href="#">Works</a></li>
-					<li><a data-goto=".page__section_5" class="menu__link" href="#">Blog</a></li>
-					<li><a data-goto=".page__section_6" class="menu__link" href="#">Clients</a></li>
-					<li><a data-goto=".page__section_7" class="menu__link" href="#">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
+		</header>
+
 		<section class="main">
 			<div class="container">
-				<h1 class="main-title page__section_1">WELCOME TO STARTUP</h1>
-				<h3 class="main-template">Your Favourite Creative Agency Template</h3>
-				<a class="main-buttom popup-link" href="#popup">GET STARTED</a>
+				<div class="text-wrapper">
+					<h1 class="main-title page__section_1">WELCOME TO STARTUP</h1>
+					<h3 class="main-template">Your Favourite Creative Agency Template</h3>
+					<a class="main-buttom popup-link" href="#popup">GET STARTED</a>
+				</div>
 			</div>
 		</section>
 		<section class="services">
@@ -397,33 +401,35 @@
 			</div>
 		</section>
 
-<div id="popup" class="popup">
-	<div class="popup__body">
-		<div class="popup__content">
-			<a href="" class="popup__close close-popup">╳</a>
-			<form class="popup__contact-form">
-				<input id="jsNamePopup" type="text" placeholder="YOUR NAME" required="required">
-				<input id="jsPhonePopup" type="password" placeholder="PASSWORD" required="required">
-				<button class="submit">SIGN IN</button>
-				<p><span>*</span> You should pass a small check before signing in.</p>
-			</form>
+		<div id="popup" class="popup">
+			<div class="popup__body">
+				<div class="popup__content">
+					<a href="" class="popup__close close-popup">╳</a>
+					<form class="popup__contact-form">
+						<input id="jsNamePopup" type="text" placeholder="YOUR NAME" required="required">
+						<input id="jsPhonePopup" type="password" placeholder="PASSWORD" required="required">
+						<button class="submit">SIGN IN</button>
+						<p><span>*</span> You should pass a small check before signing in.</p>
+					</form>
+				</div>
+			</div>
 		</div>
+		
+		<footer class="footer">
+			<div class="container">
+				<ul class="footer-social">
+					<li class="socisl-item"><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+					<li class="socisl-item"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+					<li class="socisl-item"><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
+					<li class="socisl-item"><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+				</ul>
+				<hr>
+				<p class="developed-by">© 2015 STARTUP. DESIGNED BY SHAPEDTHEME</p>
+			</div>
+		</footer>
 	</div>
-</div><footer class="footer">
-	<div class="container">
-		<ul class="footer-social">
-			<li class="socisl-item"><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-			<li class="socisl-item"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-			<li class="socisl-item"><a href="#"><i class="fab fa-google-plus-g" aria-hidden="true"></i></a></li>
-			<li class="socisl-item"><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-		</ul>
-		<hr>
-		<p class="developed-by">© 2015 STARTUP. DESIGNED BY SHAPEDTHEME</p>
-	</div>
-</footer>	</div>
 	<script src="https://kit.fontawesome.com/4b23db13e8.js" crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/slider.js"></script>
 	<script src="js/popups.js"></script>

@@ -1,6 +1,7 @@
 var swiper = new Swiper('.swiper-container', {
 	slidesPerView: 4,
 	spaceBetween: 30,
+	dragbl: true,
 	breakpoints: {
 		// when window width is >= 320px
 		320: {
@@ -16,8 +17,7 @@ var swiper = new Swiper('.swiper-container', {
 		520: {
 			slidesPerView: 3,
 			spaceBetween: 30
-		}
-		,
+		},
 		// when window width is >= 768px
 		768: {
 			slidesPerView: 4,
